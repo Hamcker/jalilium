@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Image Merger</title>
+
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v[X.Y.Z]/dist/font-face.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body
+        class="h-screen dark:bg-[#333] bg-[#fefefe] dark:text-white text-[#000000de] flex flex-col"
+        dir="rtl"
+    >
+        <nav class="flex items-end px-4 py-3 gap-6 mb-9">
+            <h1 class="text-3xl flex items-center gap-3">
+                <img src="logo.png" alt="سعید جلیلی" class="h-10 dark:invert" />
+                جلیلیوم
+            </h1>
+            <h2 class="opacity-70">آرایشگر نمایه شبکه‌های مجازی</h2>
+            <div class="flex-1"></div>
+            <span class="text-xs opacity-70 flex items-center gap-3"
+                >ساخته شده با ❤️ توسط
+                <a
+                    href="https://hamcker.com"
+                    class="text-sm opacity-70 underline"
+                    >حامدشون</a
+                >
+                در
+                <a href="https://twitter.com/Hamcker"
+                    ><svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        class="h-5 fill-black dark:fill-white"
+                    >
+                        <g>
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                            ></path>
+                        </g>
+                    </svg>
+                </a>
+            </span>
+        </nav>
+
+        <section class="flex flex-col items-center gap-6">
+            <div
+                class="border border-dashed border-2 rounded-lg bg-gray-300 border-gray-400 dark:bg-gray-600 aspect-square h-40 w-40"
+            >
+                <canvas id="canvas" class="border-none h-full w-full"></canvas>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button
+                    class="px-4 py-3 bg-green-500 hover:bg-green-600 active:bg-green-700 text-black rounded"
+                    onclick="baseImage.click()"
+                >
+                    بارگذاری نمایه
+                </button>
+                <input hidden type="file" id="baseImage" accept="image/*" />
+
+                <button
+                    class="px-4 py-3 bg-green-500 hover:bg-green-600 active:bg-green-700 text-black rounded"
+                    id="downloadButton"
+                >
+                    دریافت نمایه
+                </button>
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button
+                    class="px-4 py-3 bg-green-500 hover:bg-green-600 active:bg-green-700 text-black rounded"
+                    onclick="overlayImage.src = 'overlay-dark.png'"
+                >
+                    آرایش تیره
+                </button>
+
+                <button
+                    class="px-4 py-3 bg-green-500 hover:bg-green-600 active:bg-green-700 text-black rounded"
+                    onclick="overlayImage.src = 'overlay-light.png'"
+                >
+                    آرایش روشن
+                </button>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
