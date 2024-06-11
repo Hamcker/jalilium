@@ -58,7 +58,7 @@ function drawImages(baseImage, overlayImage) {
 function downloadImage() {
     const canvas = document.getElementById("canvas");
     const link = document.createElement("a");
-    link.download = "merged_image.png";
+    link.download = "Jalilium.png";
     link.href = canvas.toDataURL();
     link.click();
 }
